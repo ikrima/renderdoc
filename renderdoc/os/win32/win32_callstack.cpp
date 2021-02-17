@@ -458,8 +458,11 @@ static bool InitDbgHelp()
 
   HMODULE module = NULL;
 
-  // can't reliably co-exist with dbghelp already being used in the process
+  // can't reliably co-exist with dbghelp already being used in the process  
+  // Beg #TPLibMod-renderdoc: Ignore guard against loaded dbghelp.dll
   if(GetModuleHandleA("dbghelp.dll") != NULL)
+  // if(false)
+  // End TPLibMod
   {
     RDCLOG(
         "dbghelp.dll is already loaded, can't guarantee thread-safety against application use. "
