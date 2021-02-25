@@ -460,8 +460,8 @@ static bool InitDbgHelp()
 
   // can't reliably co-exist with dbghelp already being used in the process  
   // Beg #TPLibMod-renderdoc: Ignore guard against loaded dbghelp.dll
-  if(GetModuleHandleA("dbghelp.dll") != NULL)
-  // if(false)
+  // if(GetModuleHandleA("dbghelp.dll") != NULL)
+  if(false)
   // End TPLibMod
   {
     RDCLOG(
